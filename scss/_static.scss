@@ -1,0 +1,57 @@
+#header {
+    position: fixed;
+    width: 100%;
+    &.active{
+        background-color: orange;
+
+    }
+    .logo { width: 20%; }
+
+    
+
+    ul {
+        justify-content: flex-end;
+        display: flex;
+        width: 80%;
+
+        li a {
+            text-decoration: none;
+            color: red;
+            padding: 15px 10px;
+            display: inline-block;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        }
+    }
+
+    .nav-ico { display: none; }
+}
+
+// telefon
+@media (max-width: 576px) {
+    #header {
+        position: relative;
+        // background-color: black;
+
+        ul {
+            position: absolute;
+            flex-direction: column;
+            top: 100%;
+            left: -100%;           // ekrandan tam çıxsın
+            width: 100%;
+            text-align: center;
+            background: black;      // arxa fon olmasa görünməz ola bilər
+            transition: left .3s;
+
+            &.active {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .nav-ico {
+            display: block;
+            cursor: pointer;
+            padding: 15px;
+        }
+    }
+}
